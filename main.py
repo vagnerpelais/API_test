@@ -9,7 +9,7 @@ app.include_router(plantas.router)
 app.include_router(regadores.router)
 
 
-@app.get('/')
+@app.get('/', include_in_schema=False)
 async def root():
     return RedirectResponse(url='/docs', status_code=status.HTTP_302_FOUND)
 
